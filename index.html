@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Did My Money Go?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+            <div>
+                <p class="small-title">PERSONAL FINANCE</p>
+                <h1>Where Did My Money Go? 💸</h1>
+                <p class="subtitle">Track it. Understand it. Control it.</p>
+            </div>
+
+            <div class="month" id="currentMonth"></div>
+        </header>
+
+
+        <!-- SUMMARY -->
+
+        <section class="summary">
+
+            <div class="card balance-card">
+                <span>💰 Balance</span>
+                <h2 id="balance">₹0</h2>
+            </div>
+
+            <div class="card income-card">
+                <span>📈 Income</span>
+                <h2 id="income">₹0</h2>
+            </div>
+
+            <div class="card expense-card">
+                <span>💸 Expenses</span>
+                <h2 id="expense">₹0</h2>
+            </div>
+
+        </section>
+
+
+        <!-- ADD TRANSACTION -->
+
+        <section class="main-grid">
+
+            <div class="box">
+
+                <h2>Add Transaction</h2>
+
+                <form id="transactionForm">
+
+                    <label>Transaction Type</label>
+
+                    <div class="type-buttons">
+
+                        <button type="button"
+                                class="type-btn active"
+                                data-type="expense">
+                            💸 Expense
+                        </button>
+
+                        <button type="button"
+                                class="type-btn"
+                                data-type="income">
+                            💰 Income
+                        </button>
+
+                    </div>
+
+                    <input type="hidden"
+                           id="transactionType"
+                           value="expense">
+
+
+                    <label>Amount</label>
+
+                    <div class="amount-input">
+                        <span>₹</span>
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Enter amount"
+                            min="1"
+                            required>
+                    </div>
+
+
+                    <label>Category</label>
+
+                    <select id="category">
+
+                        <option value="Food">🍔 Food</option>
+                        <option value="Travel">🚌 Travel</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                        <option value="Bills">💡 Bills</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Entertainment">🎮 Entertainment</option>
+                        <option value="Health">💊 Health</option>
+                        <option value="Other">📦 Other</option>
+
+                    </select>
+
+
+                    <label>Description</label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        placeholder="What did you spend on?"
+                        required>
+
+
+                    <button class="add-btn" type="submit">
+                        + Add Transaction
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- CATEGORY ANALYSIS -->
+
+            <div class="box">
+
+                <div class="box-header">
+                    <h2>Spending Analysis</h2>
+                    <span>📊</span>
+                </div>
+
+                <div id="categoryChart" class="category-chart">
+
+                    <p class="empty">
+                        Add some expenses to see your spending pattern.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRANSACTIONS -->
+
+        <section class="box transactions">
+
+            <div class="box-header">
+
+                <div>
+                    <h2>Recent Transactions</h2>
+                    <p class="muted">Your latest money movements</p>
+                </div>
+
+                <button id="clearAll" class="clear-btn">
+                    Clear All
+                </button>
+
+            </div>
+
+
+            <div id="transactionList">
+
+                <div class="empty-state">
+                    <div>💸</div>
+                    <h3>No transactions yet</h3>
+                    <p>Add your first transaction above.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Made with HTML • CSS • JavaScript ❤️
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
